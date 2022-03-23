@@ -2,12 +2,13 @@ package com.study.commento_.member.memberDto;
 
 import com.study.commento_.member.dateInterface.DateSet;
 import com.study.commento_.member.dateInterface.DateSetImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 
 public class MemberDto {
 
-    DateSet ds = new DateSetImpl();
+    private DateSet ds;
 
     private long memberNo;
     private Department department;
@@ -15,8 +16,10 @@ public class MemberDto {
     private String memberPw;
     private LocalDateTime created_at;
 
-    public MemberDto(long memberNo, Department department, String memberId, String memberPw) {
+    public MemberDto(){}
 
+    public MemberDto(Long memberNo, Department department, String memberId, String memberPw) {
+        ds = new DateSetImpl();
         this.memberNo = memberNo;
         this.department = department;
         this.memberId = memberId;
@@ -25,6 +28,7 @@ public class MemberDto {
     }
 
     public MemberDto(Department department, String memberId, String memberPw) {
+        ds = new DateSetImpl();
         this.department = department;
         this.memberId = memberId;
         this.memberPw = memberPw;
@@ -41,10 +45,6 @@ public class MemberDto {
 
     public String getMemberId() {
         return memberId;
-    }
-
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
     }
 
     public String getMemberPw() {

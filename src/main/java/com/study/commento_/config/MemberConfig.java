@@ -1,4 +1,4 @@
-package com.study.commento_.member;
+package com.study.commento_.config;
 
 import com.study.commento_.member.dateInterface.DateSet;
 import com.study.commento_.member.dateInterface.DateSetImpl;
@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MemberConfig {
-    
+
     @Bean
     public MemberService memberService(){
-        return new MemberServiceImpl(memberRepository());
+        return new MemberServiceImpl( memberRepository() );
     }
 
     @Bean
@@ -22,8 +22,8 @@ public class MemberConfig {
         return new MemoryMemberRepository();
     }
 
-    @Bean
-    public DateSet dateSet(){
-        return new DateSetImpl();
-    }
+//    @Bean
+//    public DateSet dateSet(){
+//        return new DateSetImpl();
+//    }
 }
