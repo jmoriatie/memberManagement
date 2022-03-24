@@ -49,16 +49,22 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public MemberDto updateMember(MemberDto memberDto) {
-        MemberDto findMember = storage.get(memberDto.getMemberNo());
-        findMember.setDepartment(memberDto.getDepartment());
-        findMember.setMemberPw(memberDto.getMemberPw());
+    public MemberDto updateMember(String id, MemberDto memberDto) {
+        MemberDto findMember = findById(id);
+        if(findMember != null){
+            findMember.setDepartment(memberDto.getDepartment());
+            findMember.setMemberPw(memberDto.getMemberPw());
+        }
+
         return findMember;
     }
 
     @Override
-    public void deleteMember(MemberDto memberDto) {
-        storage.remove(memberDto.getMemberNo());
+    public void deleteMember(String id) {
+        MemberDto delMember = findById(id);
+        if(id != null){
+            storage.remove(delMember.getMemberNo());
+        }
     }
 
 

@@ -12,6 +12,6 @@ public interface MemberRepository {
     MemberDto findByNo(Long memberNo);
     MemberDto findById(String memberId);
     List<MemberDto> findAllMembers();
-    MemberDto updateMember(MemberDto memberDto);
-    void deleteMember(MemberDto memberDto);
+    MemberDto updateMember(String id, MemberDto memberDto);
+    void deleteMember(String id);
 }

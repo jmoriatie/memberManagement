@@ -36,12 +36,12 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public MemberDto updateMember(MemberDto memberDto) {
-        return memberRepository.updateMember(memberDto);
+    public MemberDto updateMember(String id, MemberDto memberDto) {
+        return memberRepository.updateMember(id, memberDto);
     }
 
     @Override
-    public void deleteMember(MemberDto memberDto) {
-        memberRepository.deleteMember(memberDto);
+    public void deleteMember(String id) {
+        memberRepository.deleteMember(id);
     }
 }

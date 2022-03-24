@@ -13,9 +13,9 @@ public class MemberRestController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping("/member/{memberId}")
-    public MemberDto getMember(@PathVariable String memberId){
-        return memberService.findById(memberId);
+    @GetMapping("/member/{id}")
+    public MemberDto getMember(@PathVariable String id){
+        return memberService.findById(id);
     }
 
     @GetMapping("/members")
@@ -23,18 +23,18 @@ public class MemberRestController {
         return memberService.findAllMembers();
     }
 
-    @PostMapping("/member")
-    public void joinMember(@RequestBody MemberDto memberDto){
+    @PostMapping("/member/{id}")
+    public void joinMember(@PathVariable String id, @RequestBody MemberDto memberDto){
         memberService.join(memberDto);
     }
 
-    @PutMapping("/member")
-    public MemberDto updateMember(@RequestBody MemberDto memberDto){
-        return memberService.updateMember(memberDto);
+    @PatchMapping("/member/{id}")
+    public MemberDto updateMember(@PathVariable String id, @RequestBody MemberDto memberDto){
+        return memberService.updateMember(id, memberDto);
     }
 
-    @DeleteMapping("/member")
-    public void deleteMember(@RequestBody MemberDto memberDto){
-        memberService.deleteMember(memberDto);
+    @DeleteMapping("/member/{id}")
+    public void deleteMember(@PathVariable String id){
+        memberService.deleteMember(id);
     }
 }
