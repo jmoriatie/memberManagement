@@ -1,5 +1,6 @@
 package com.study.commento_.config;
 
+import com.study.commento_.member.memberDao.StatisticMapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -14,7 +15,7 @@ import javax.sql.DataSource;
 public class MybatisConfig {
 
         @Bean
-        public SqlSessionFactory sqlSessionFactory (DataSource dataSource) throws Exception {
+        public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
             SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 
             sqlSessionFactory.setDataSource(dataSource);
@@ -27,5 +28,6 @@ public class MybatisConfig {
         public SqlSessionTemplate sqlSession (SqlSessionFactory sqlSessionFactory) {
             return new SqlSessionTemplate(sqlSessionFactory);
         }
+
     }
 

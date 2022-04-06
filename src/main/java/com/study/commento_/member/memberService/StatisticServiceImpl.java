@@ -1,6 +1,7 @@
 package com.study.commento_.member.memberService;
 
 import com.study.commento_.member.memberDao.StatisticMapper;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +9,9 @@ import java.util.HashMap;
 
 @Service
 public class StatisticServiceImpl implements StatisticService{
+
+    @Autowired
+    private SqlSessionTemplate sqlSession;
 
     @Autowired
     private StatisticMapper uMapper;
