@@ -1,6 +1,9 @@
 
 ### createDate 생김새
 > 년도(2자리) 월(2자리) 일(2자리) 시(두자리) 분(두자리)
+
+* CONCAT 사용 이유 : 변수를 활용하여 파라미터로 사용
+* WEEKDAY 를 활용하여 휴일을 제외한 로그인 수 출력
 ---            
 #### 월별 조회
 ```
@@ -38,10 +41,17 @@ FROM statistc.requestInfo
 WHERE WEEKDAY( LEFT(createDate, 6)  ) NOT IN ('5', '6');
 ```
 ---
-#### 부서별 월별 로그인 수
+#### 부서별 월별 로그인 수 (부서 전체)
 ```
 SELECT CONCAT('22','-', '02') YYYYMM, requestCode, COUNT(userID) cnt_mon_dept
 FROM statistc.requestInfo
 WHERE LEFT(createDate, 4)= CONCAT('22','02')
 GROUP BY requestCode;
+```
+#### 부서별 월별 로그인 수 (부서 선택)
+```
+SELECT CONCAT('22','-', '02') YYYYMM, requestCode, COUNT(userID) cnt_mon_dept
+FROM statistc.requestInfo
+WHERE LEFT(createDate, 4)= CONCAT('22','02')
+AND requestCode = 'L'
 ```
