@@ -3,9 +3,9 @@
 #### 도구: spring boot (MVC) + Mybatis + Mysql / IntelliJ 
 > 버전정보
 
-* IntelliJ : 
-* Mybatis : 
-* Gradle에 의존성 추가한 것들 버전 추가 필요 
+* IntelliJ 
+* Mybatis 
+* Gradle
 
 > 했던거
 
