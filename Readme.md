@@ -1,8 +1,3 @@
-> # 질문
-* mybatis의 BindingException 이 해결되지 않아서 실행이 어렵습니다.
-* xml 파일을 resource로 경로변경도 해봤고, xml파일의 오타도 다시 확인했고, 객체명이 틀린게 있는지 다 확인했는데, 가이드대로 해도 해당 오류가 해결되지 않습니다. 버전문제일까요..?
-
----
 > # 접속자, 회원 관련  통계 API 
 
 #### 도구: spring boot (MVC) + Mybatis + Mysql / IntelliJ 
